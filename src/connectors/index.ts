@@ -29,7 +29,7 @@ if (typeof NETWORK_URL === 'undefined') {
 }
 
 export const network = new NetworkConnector({
-  urls: { [Number('137')]: NETWORK_URL },
+  urls: { [Number('2000')]: NETWORK_URL },
 });
 
 let networkLibrary: Web3Provider | undefined;
@@ -39,14 +39,14 @@ export function getNetworkLibrary(): Web3Provider {
 }
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [137, 80001],
+  supportedChainIds: [2000],
 });
 
 export const safeApp = new SafeAppConnector();
 
 // mainnet only
 export const walletconnect = new WalletConnectConnector({
-  rpc: { 137: NETWORK_URL },
+  rpc: { 2000: NETWORK_URL },
   bridge: 'https://bridge.walletconnect.org',
   qrcode: true,
 });
@@ -54,22 +54,22 @@ export const walletconnect = new WalletConnectConnector({
 // mainnet only
 export const arkaneconnect = new ArkaneConnector({
   clientID: 'QuickSwap',
-  chainId: 137,
+  chainId: 2000,
 });
 
 // mainnet only
 export const fortmatic = new FortmaticConnector({
   apiKey: FORMATIC_KEY ?? '',
-  chainId: 137,
+  chainId: 2000,
 });
 
 // mainnet only
 export const portis = new PortisConnector({
   dAppId: PORTIS_ID ?? '',
-  networks: [137],
+  networks: [2000],
   config: {
     nodeUrl: NETWORK_URL,
-    chainId: 137,
+    chainId: 2000,
   },
 });
 
@@ -79,11 +79,11 @@ export const walletlink = new WalletLinkConnector({
   appName: 'Uniswap',
   appLogoUrl:
     'https://mpng.pngfly.com/20181202/bex/kisspng-emoji-domain-unicorn-pin-badges-sticker-unicorn-tumblr-emoji-unicorn-iphoneemoji-5c046729264a77.5671679315437924251569.jpg',
-  supportedChainIds: [137],
+  supportedChainIds: [2000],
 });
 
 export const ledger = new LedgerConnector({
-  chainId: 137,
+  chainId: 2000,
   url: NETWORK_URL,
   pollingInterval: POLLING_INTERVAL,
 });

@@ -1287,7 +1287,7 @@ export function useStakingInfo(
         new TokenAmount(item.tokens[1], '0'),
       );
       return lp && lp !== ''
-        ? new Token(137, lp, 18, 'SLP', 'Staked LP')
+        ? new Token(2000, lp, 18, 'SLP', 'Staked LP')
         : dummyPair.liquidityToken;
     }),
   );

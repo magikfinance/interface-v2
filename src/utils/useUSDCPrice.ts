@@ -40,27 +40,27 @@ export default function useUSDCPrice(currency?: Currency): Price | undefined {
       ],
       [
         wrapped?.equals(oldQuickToken) ? undefined : wrapped,
-        chainId === ChainId.MATIC ? oldQuickToken : undefined,
+        chainId === ChainId.MAINNET ? oldQuickToken : undefined,
       ],
       [
         wrapped?.equals(usdcToken) ? undefined : wrapped,
-        chainId === ChainId.MATIC ? usdcToken : undefined,
+        chainId === ChainId.MAINNET ? usdcToken : undefined,
       ],
       [
         wrapped?.equals(usdtToken) ? undefined : wrapped,
-        chainId === ChainId.MATIC ? usdtToken : undefined,
+        chainId === ChainId.MAINNET ? usdtToken : undefined,
       ],
       [
         wrapped?.equals(daiToken) ? undefined : wrapped,
-        chainId === ChainId.MATIC ? daiToken : undefined,
+        chainId === ChainId.MAINNET ? daiToken : undefined,
       ],
       [
         chainId ? WETH[chainId] : undefined,
-        chainId === ChainId.MATIC ? usdcToken : undefined,
+        chainId === ChainId.MAINNET ? usdcToken : undefined,
       ],
       [
-        chainId === ChainId.MATIC ? oldQuickToken : undefined,
-        chainId === ChainId.MATIC ? usdcToken : undefined,
+        chainId === ChainId.MAINNET ? oldQuickToken : undefined,
+        chainId === ChainId.MAINNET ? usdcToken : undefined,
       ],
     ],
     [chainId, wrapped, daiToken, oldQuickToken, usdcToken, usdtToken],
@@ -238,27 +238,27 @@ export function useUSDCPrices(currencies: Currency[]): (Price | undefined)[] {
     ]);
     tokenPairs.push([
       wrapped?.equals(oldQuickToken) ? undefined : wrapped,
-      chainId === ChainId.MATIC ? oldQuickToken : undefined,
+      chainId === ChainId.MAINNET ? oldQuickToken : undefined,
     ]);
     tokenPairs.push([
       wrapped?.equals(usdcToken) ? undefined : wrapped,
-      chainId === ChainId.MATIC ? usdcToken : undefined,
+      chainId === ChainId.MAINNET ? usdcToken : undefined,
     ]);
     tokenPairs.push([
       wrapped?.equals(usdtToken) ? undefined : wrapped,
-      chainId === ChainId.MATIC ? usdtToken : undefined,
+      chainId === ChainId.MAINNET ? usdtToken : undefined,
     ]);
     tokenPairs.push([
       wrapped?.equals(daiToken) ? undefined : wrapped,
-      chainId === ChainId.MATIC ? daiToken : undefined,
+      chainId === ChainId.MAINNET ? daiToken : undefined,
     ]);
     tokenPairs.push([
       chainId ? WETH[chainId] : undefined,
-      chainId === ChainId.MATIC ? usdcToken : undefined,
+      chainId === ChainId.MAINNET ? usdcToken : undefined,
     ]);
     tokenPairs.push([
       chainId ? oldQuickToken : undefined,
-      chainId === ChainId.MATIC ? usdcToken : undefined,
+      chainId === ChainId.MAINNET ? usdcToken : undefined,
     ]);
   });
   const pairs = usePairs(tokenPairs);

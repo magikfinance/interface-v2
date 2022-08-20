@@ -1560,7 +1560,7 @@ export function getEtherscanLink(
   type: 'transaction' | 'token' | 'address' | 'block',
 ): string {
   const prefix =
-    'https://' + (chainId === 80001 ? 'mumbai.' : '') + 'polygonscan.com';
+    'https://' + (chainId === 538 ? 'mumbai.' : '') + 'polygonscan.com';
 
   switch (type) {
     case 'transaction': {
@@ -2094,7 +2094,7 @@ export function getEarnedUSDDualFarm(stakingInfo: DualStakingInfo | undefined) {
 }
 
 export function isSupportedNetwork(ethereum: any) {
-  return Number(ethereum.chainId) === 137;
+  return Number(ethereum.chainId) === 2000;
 }
 
 export function getPageItemsToLoad(index: number, countsPerPage: number) {
@@ -2155,13 +2155,13 @@ export function getFarmLPToken(
     new TokenAmount(info.tokens[0], '0'),
     new TokenAmount(info.tokens[1], '0'),
   );
-  if (lp && lp !== '') return new Token(137, lp, 18, 'SLP', 'Staked LP');
+  if (lp && lp !== '') return new Token(2000, lp, 18, 'SLP', 'Staked LP');
   return dummyPair.liquidityToken;
 }
 
 export function getSyrupLPToken(info: SyrupBasic | SyrupInfo) {
   const lp = info.lp;
-  if (lp && lp !== '') return new Token(137, lp, 18, 'SLP', 'Staked LP');
+  if (lp && lp !== '') return new Token(2000, lp, 18, 'SLP', 'Staked LP');
   return info.stakingToken;
 }
 

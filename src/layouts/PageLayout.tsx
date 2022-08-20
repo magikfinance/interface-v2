@@ -38,35 +38,9 @@ const PageLayout: React.FC<PageLayoutProps> = ({ children, name }) => {
     }
   }, []);
 
-  const PasswordModal = () => {
-    const [devPass, setDevPass] = useState('');
-    const confirmPassword = () => {
-      if (devPass === 'devPass') {
-        setOpenPassModal(false);
-      }
-    };
-    return (
-      <CustomModal open={openPassModal} onClose={confirmPassword}>
-        <Box className='devPassModal'>
-          <p>Please input password to access dev site.</p>
-          <input
-            type='password'
-            value={devPass}
-            onChange={(e) => {
-              setDevPass(e.target.value);
-            }}
-          />
-          <Box textAlign='right'>
-            <Button onClick={confirmPassword}>Confirm</Button>
-          </Box>
-        </Box>
-      </CustomModal>
-    );
-  };
-
   return (
     <Box className='page'>
-      {openPassModal && <PasswordModal />}
+      {openPassModal}
       <BetaWarningBanner />
       <Header />
       {!isProMode && <Background fallback={false} />}

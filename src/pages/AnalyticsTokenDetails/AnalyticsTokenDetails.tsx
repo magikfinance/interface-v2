@@ -32,7 +32,7 @@ const AnalyticsTokenDetails: React.FC = () => {
   const [token, setToken] = useState<any>(null);
   const { chainId } = useActiveWeb3React();
   const currency = token
-    ? new Token(ChainId.MATIC, getAddress(token.id), token.decimals)
+    ? new Token(ChainId.MAINNET, getAddress(token.id), token.decimals)
     : undefined;
   const [tokenPairs, updateTokenPairs] = useState<any>(null);
   const {

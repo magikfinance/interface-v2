@@ -19,12 +19,12 @@ import VenlyIcon from 'assets/images/venly.svg';
 import GnosisIcon from 'assets/images/gnosis_safe.png';
 
 const WETH_ONLY: ChainTokenList = {
-  [ChainId.MUMBAI]: [WETH[ChainId.MUMBAI]],
-  [ChainId.MATIC]: [WETH[ChainId.MATIC]],
+  [ChainId.TESTNET]: [WETH[ChainId.TESTNET]],
+  [ChainId.MAINNET]: [WETH[ChainId.MAINNET]],
 };
 
 // TODO: Remove this constant when supporting multichain
-export const MATIC_CHAIN = ChainId.MATIC;
+export const MATIC_CHAIN = ChainId.MAINNET;
 
 export enum TxnType {
   SWAP,
@@ -34,36 +34,27 @@ export enum TxnType {
 
 export const GlobalConst = {
   blacklists: {
-    TOKEN_BLACKLIST: [
-      '0x495c7f3a713870f68f8b418b355c085dfdc412c3',
-      '0xc3761eb917cd790b30dad99f6cc5b4ff93c4f9ea',
-      '0xe31debd7abff90b06bca21010dd860d8701fd901',
-      '0xfc989fbb6b3024de5ca0144dc23c18a063942ac1',
-      '0xf4eda77f0b455a12f3eb44f8653835f377e36b76',
-    ],
-    PAIR_BLACKLIST: [
-      '0xb6a741f37d6e455ebcc9f17e2c16d0586c3f57a5',
-      '0x97cb8cbe91227ba87fc21aaf52c4212d245da3f8',
-    ],
+    TOKEN_BLACKLIST: [null],
+    PAIR_BLACKLIST: [null],
   },
   addresses: {
     ROUTER_ADDRESS: {
-      [ChainId.MATIC]: '0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff',
-      [ChainId.MUMBAI]: '0x8954AfA98594b838bda56FE4C12a09D7739D179b',
+      [ChainId.MAINNET]: '0xF03B6DAD0e06e6c542CF88596355f91922f69bA7',
+      [ChainId.TESTNET]: '0x8954AfA98594b838bda56FE4C12a09D7739D179b',
     }, //'0x6207A65a8bbc87dD02C3109D2c74a6bCE4af1C8c';//
     ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
-    LAIR_ADDRESS: '0xf28164a485b0b2c90639e47b0f377b4a438a16b1',
-    NEW_LAIR_ADDRESS: '0x958d208Cdf087843e9AD98d23823d32E17d723A1',
-    QUICK_ADDRESS: '0x831753DD7087CaC61aB5644b308642cc1c33Dc13',
-    NEW_QUICK_ADDRESS: '0xB5C064F955D8e7F38fE0460C556a72987494eE17',
-    FACTORY_ADDRESS: '0x5757371414417b8C6CAad45bAeF941aBc7d3Ab32',
-    GOVERNANCE_ADDRESS: '0x5e4be8Bc9637f0EAA1A755019e06A68ce081D58F', //TODO: MATIC
+    LAIR_ADDRESS: '0xF03B6DAD0e06e6c542CF88596355f91922f69bA7',
+    NEW_LAIR_ADDRESS: '0xF03B6DAD0e06e6c542CF88596355f91922f69bA7',
+    QUICK_ADDRESS: '0x5E245Ca4fc9Ce5D4D03E53F50E0cE681e9DCf4fD',
+    NEW_QUICK_ADDRESS: '0x5E245Ca4fc9Ce5D4D03E53F50E0cE681e9DCf4fD',
+    FACTORY_ADDRESS: '0x1e00cf5647108EdCB4f6e1EbC5805753db3dF63e',
+    GOVERNANCE_ADDRESS: '0xBCd969bDF37654aaE11D37817b13Da9F7e0374e5', //TODO: MATIC
     MERKLE_DISTRIBUTOR_ADDRESS: {
       // TODO: specify merkle distributor for mainnet
-      [ChainId.MATIC]: '0x4087F566796b46eEB01A38174c06E2f9924eAea8', //TODO: MATIC
-      [ChainId.MUMBAI]: undefined,
+      [ChainId.MAINNET]: '0x4087F566796b46eEB01A38174c06E2f9924eAea8', //TODO: MATIC
+      [ChainId.TESTNET]: undefined,
     },
-    QUICK_CONVERSION: '0x333068d06563a8dfdbf330a0e04a9d128e98bf5a',
+    QUICK_CONVERSION: '0xBCd969bDF37654aaE11D37817b13Da9F7e0374e5',
   },
   utils: {
     QUICK_CONVERSION_RATE: 1000,
@@ -234,119 +225,84 @@ export const GlobalValue = {
     ), // 15%
   },
   tokens: {
-    MATIC: WETH[ChainId.MATIC],
+    MATIC: WETH[ChainId.MAINNET],
     COMMON: {
       EMPTY: new Token(
-        ChainId.MATIC,
+        ChainId.MAINNET,
         '0x0000000000000000000000000000000000000000',
         0,
         'EMPTY',
         'EMPTY',
       ),
       USDC: new Token(
-        ChainId.MATIC,
-        '0x2791Bca1f2de4661ED88A30C99A7a9449Aa84174',
+        ChainId.MAINNET,
+        '0x765277EebeCA2e31912C9946eAe1021199B39C61',
         6,
         'USDC',
         'USDC',
       ),
       USDT: new Token(
-        ChainId.MATIC,
-        '0xc2132D05D31c914a87C6611C10748AEb04B58e8F',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         6,
         'USDT',
         'Tether USD',
       ),
       OLD_QUICK: new Token(
-        ChainId.MATIC,
+        ChainId.MAINNET,
         GlobalConst.addresses.QUICK_ADDRESS,
         18,
         'QUICK(OLD)',
         'Quickswap(OLD)',
       ),
       NEW_QUICK: new Token(
-        ChainId.MATIC,
+        ChainId.MAINNET,
         GlobalConst.addresses.NEW_QUICK_ADDRESS,
         18,
         'QUICK(NEW)',
         'QuickSwap(NEW)',
       ),
       OLD_DQUICK: new Token(
-        ChainId.MATIC,
-        '0xf28164A485B0B2C90639E47b0f377b4a438a16B1',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         18,
         'dQUICK',
         'Dragon QUICK',
       ),
       NEW_DQUICK: new Token(
-        ChainId.MATIC,
-        '0x958d208Cdf087843e9AD98d23823d32E17d723A1',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         18,
         'dQUICK',
         'Dragon QUICK',
       ),
       WBTC: new Token(
-        ChainId.MATIC,
-        '0x1BFD67037B42Cf73acF2047067bd4F2C47D9BfD6',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         8,
         'wBTC',
         'Wrapped Bitcoin',
       ),
       DAI: new Token(
-        ChainId.MATIC,
-        '0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         18,
         'DAI',
         'Dai Stablecoin',
       ),
       ETHER: new Token(
-        ChainId.MATIC,
-        '0x7ceB23fD6bC0adD59E62ac25578270cFf1b9f619',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         18,
         'ETH',
         'Ether',
       ),
       CXETH: new Token(
-        ChainId.MATIC,
-        '0xfe4546feFe124F30788c4Cc1BB9AA6907A7987F9',
+        ChainId.MAINNET,
+        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
         18,
         'cxETH',
         'CelsiusX Wrapped ETH',
-      ),
-      MI: new Token(
-        ChainId.MATIC,
-        '0xa3Fa99A148fA48D14Ed51d610c367C61876997F1',
-        18,
-        'MAI',
-        'miMATIC',
-      ),
-      SAND: new Token(
-        ChainId.MATIC,
-        '0xBbba073C31bF03b8ACf7c28EF0738DeCF3695683',
-        18,
-        'SAND',
-        'SAND',
-      ),
-      MAUSDC: new Token(
-        ChainId.MATIC,
-        '0x9719d867A500Ef117cC201206B8ab51e794d3F82',
-        6,
-        'maUSDC',
-        'Matic Aave interest bearing USDC',
-      ),
-      FRAX: new Token(
-        ChainId.MATIC,
-        '0x45c32fA6DF82ead1e2EF74d17b76547EDdFaFF89',
-        18,
-        'FRAX',
-        'FRAX',
-      ),
-      GHST: new Token(
-        ChainId.MATIC,
-        '0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
-        18,
-        'GHST',
-        'Aavegotchi GHST Token',
       ),
     },
   },
@@ -357,8 +313,8 @@ export const GlobalData = {
     // used to construct intermediary pairs for trading
     BASES_TO_CHECK_TRADES_AGAINST: {
       ...WETH_ONLY,
-      [ChainId.MATIC]: [
-        ...WETH_ONLY[ChainId.MATIC],
+      [ChainId.MAINNET]: [
+        ...WETH_ONLY[ChainId.MAINNET],
         GlobalValue.tokens.COMMON.USDC,
         GlobalValue.tokens.COMMON.USDT,
         GlobalValue.tokens.COMMON.OLD_QUICK,
@@ -366,17 +322,18 @@ export const GlobalData = {
         GlobalValue.tokens.COMMON.ETHER,
         GlobalValue.tokens.COMMON.WBTC,
         GlobalValue.tokens.COMMON.DAI,
-        GlobalValue.tokens.COMMON.GHST,
-        GlobalValue.tokens.COMMON.MI,
       ],
     },
     // Some tokens can only be swapped via certain pairs, so we override the list of bases that are considered for these tokens.
-    CUSTOM_BASES: { [ChainId.MATIC]: undefined, [ChainId.MUMBAI]: undefined },
+    CUSTOM_BASES: {
+      [ChainId.MAINNET]: undefined,
+      [ChainId.TESTNET]: undefined,
+    },
     // used for display in the default list when adding liquidity
     SUGGESTED_BASES: {
       ...WETH_ONLY,
-      [ChainId.MATIC]: [
-        ...WETH_ONLY[ChainId.MATIC],
+      [ChainId.MAINNET]: [
+        ...WETH_ONLY[ChainId.MAINNET],
         GlobalValue.tokens.COMMON.DAI,
         GlobalValue.tokens.COMMON.USDC,
         GlobalValue.tokens.COMMON.USDT,
@@ -384,15 +341,13 @@ export const GlobalData = {
         GlobalValue.tokens.COMMON.NEW_QUICK,
         GlobalValue.tokens.COMMON.ETHER,
         GlobalValue.tokens.COMMON.WBTC,
-        GlobalValue.tokens.COMMON.SAND,
-        GlobalValue.tokens.COMMON.MI,
       ],
     },
     // used to construct the list of all pairs we consider by default in the frontend
     BASES_TO_TRACK_LIQUIDITY_FOR: {
       ...WETH_ONLY,
-      [ChainId.MATIC]: [
-        ...WETH_ONLY[ChainId.MATIC],
+      [ChainId.MAINNET]: [
+        ...WETH_ONLY[ChainId.MAINNET],
         GlobalValue.tokens.COMMON.DAI,
         GlobalValue.tokens.COMMON.USDC,
         GlobalValue.tokens.COMMON.USDT,
@@ -405,17 +360,17 @@ export const GlobalData = {
   },
   pairs: {
     PINNED_PAIRS: {
-      [ChainId.MATIC]: [
+      [ChainId.MAINNET]: [
         [GlobalValue.tokens.COMMON.USDC, GlobalValue.tokens.COMMON.USDT],
         [GlobalValue.tokens.COMMON.USDC, GlobalValue.tokens.COMMON.DAI],
         [GlobalValue.tokens.COMMON.ETHER, GlobalValue.tokens.COMMON.USDC],
         [GlobalValue.tokens.COMMON.WBTC, GlobalValue.tokens.COMMON.ETHER],
-        [WETH[ChainId.MATIC], GlobalValue.tokens.COMMON.USDT],
-        [WETH[ChainId.MATIC], GlobalValue.tokens.COMMON.USDC],
-        [WETH[ChainId.MATIC], GlobalValue.tokens.COMMON.ETHER],
+        [WETH[ChainId.MAINNET], GlobalValue.tokens.COMMON.USDT],
+        [WETH[ChainId.MAINNET], GlobalValue.tokens.COMMON.USDC],
+        [WETH[ChainId.MAINNET], GlobalValue.tokens.COMMON.ETHER],
         [GlobalValue.tokens.COMMON.ETHER, GlobalValue.tokens.COMMON.OLD_QUICK],
       ],
-      [ChainId.MUMBAI]: undefined,
+      [ChainId.TESTNET]: undefined,
     },
   },
   analytics: {

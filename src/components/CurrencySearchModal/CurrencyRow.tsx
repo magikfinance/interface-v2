@@ -92,7 +92,7 @@ const CurrencyRow: React.FC<CurrenyRowProps> = ({
   const isMetamask =
     ethereum &&
     ethereum.isMetaMask &&
-    Number(ethereum.chainId) === 137 &&
+    Number(ethereum.chainId) === 2000 &&
     isOnSelectedList;
 
   const addTokenToMetamask = (
