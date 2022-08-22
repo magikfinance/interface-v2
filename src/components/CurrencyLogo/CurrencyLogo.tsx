@@ -1,7 +1,7 @@
 import { Currency, ETHER, Token } from '@uniswap/sdk';
 import React, { useMemo } from 'react';
 import { Box } from '@material-ui/core';
-import EthereumLogo from 'assets/images/Currency/PolygonSwap.svg';
+import EthereumLogo from 'assets/images/Currency/wwDOGE.svg';
 import useHttpLocations from 'hooks/useHttpLocations';
 import { WrappedTokenInfo } from 'state/lists/hooks';
 import { Logo } from 'components';

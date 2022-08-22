@@ -5070,9 +5070,22 @@
     tiny-invariant "^1.1.0"
     toformat "^2.0.0"
 
+"@uniswap/sdk@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@uniswap/sdk/-/sdk-3.0.3.tgz#8201c7c72215d0030cb99acc7e661eff895c18a9"
+  integrity sha512-t4s8bvzaCFSiqD2qfXIm3rWhbdnXp+QjD3/mRaeVDHK7zWevs6RGEb1ohMiNgOCTZANvBayb4j8p+XFdnMBadQ==
+  dependencies:
+    "@uniswap/v2-core" "^1.0.0"
+    big.js "^5.2.2"
+    decimal.js-light "^2.5.0"
+    jsbi "^3.1.1"
+    tiny-invariant "^1.1.0"
+    tiny-warning "^1.0.3"
+    toformat "^2.0.0"
+
 "@uniswap/sdk@https://github.com/magikfinance/DogenSwap-sdk-master":
   version "3.0.8"
-  resolved "https://github.com/magikfinance/DogenSwap-sdk-master#be7343e7c59dd1c9184cbbaf6a839fef897730af"
+  resolved "https://github.com/magikfinance/DogenSwap-sdk-master#bf680880170163654cbf1e95425a192c669163c1"
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"

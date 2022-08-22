@@ -6,16 +6,16 @@ const addMaticToMetamask: () => void = () => {
         method: 'wallet_addEthereumChain',
         params: [
           {
-            chainId: '0x89',
+            chainId: '2000',
             chainName: 'Polygon Network',
-            rpcUrls: ['https://polygon-rpc.com/'],
+            rpcUrls: ['https://rpc-sg.dogechain.dog/'],
             iconUrls: [
               'https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/ethereum/assets/0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0/logo.png',
             ],
             blockExplorerUrls: ['https://polygonscan.com/'],
             nativeCurrency: {
-              name: 'Matic Token',
-              symbol: 'MATIC',
+              name: 'Doge Token',
+              symbol: 'WWDOGE',
               decimals: 18,
             },
           },

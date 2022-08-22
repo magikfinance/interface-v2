@@ -45,7 +45,7 @@ export const GlobalConst = {
     ZERO_ADDRESS: '0x0000000000000000000000000000000000000000',
     LAIR_ADDRESS: '0xF03B6DAD0e06e6c542CF88596355f91922f69bA7',
     NEW_LAIR_ADDRESS: '0xF03B6DAD0e06e6c542CF88596355f91922f69bA7',
-    QUICK_ADDRESS: '0x5E245Ca4fc9Ce5D4D03E53F50E0cE681e9DCf4fD',
+    QUICK_ADDRESS: '0x6FC4563460d5f45932C473334d5c1C5B4aEA0E01',
     NEW_QUICK_ADDRESS: '0x5E245Ca4fc9Ce5D4D03E53F50E0cE681e9DCf4fD',
     FACTORY_ADDRESS: '0x1e00cf5647108EdCB4f6e1EbC5805753db3dF63e',
     GOVERNANCE_ADDRESS: '0xBCd969bDF37654aaE11D37817b13Da9F7e0374e5', //TODO: MATIC
@@ -225,7 +225,7 @@ export const GlobalValue = {
     ), // 15%
   },
   tokens: {
-    MATIC: WETH[ChainId.MAINNET],
+    wwDOGE: WETH[ChainId.MAINNET],
     COMMON: {
       EMPTY: new Token(
         ChainId.MAINNET,
@@ -278,28 +278,28 @@ export const GlobalValue = {
       ),
       WBTC: new Token(
         ChainId.MAINNET,
-        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
+        '0xfA9343C3897324496A05fC75abeD6bAC29f8A40f',
         8,
         'wBTC',
         'Wrapped Bitcoin',
       ),
       DAI: new Token(
         ChainId.MAINNET,
-        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
+        '0x639A647fbe20b6c8ac19E48E2de44ea792c62c5C',
         18,
         'DAI',
         'Dai Stablecoin',
       ),
       ETHER: new Token(
         ChainId.MAINNET,
-        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
+        '0xB44a9B6905aF7c801311e8F4E76932ee959c663C',
         18,
         'ETH',
         'Ether',
       ),
       CXETH: new Token(
         ChainId.MAINNET,
-        '0x42fDB358e6a8526CD0ACaB47D72CaFFc6D95DD2f',
+        '0xB44a9B6905aF7c801311e8F4E76932ee959c663C',
         18,
         'cxETH',
         'CelsiusX Wrapped ETH',
@@ -332,16 +332,7 @@ export const GlobalData = {
     // used for display in the default list when adding liquidity
     SUGGESTED_BASES: {
       ...WETH_ONLY,
-      [ChainId.MAINNET]: [
-        ...WETH_ONLY[ChainId.MAINNET],
-        GlobalValue.tokens.COMMON.DAI,
-        GlobalValue.tokens.COMMON.USDC,
-        GlobalValue.tokens.COMMON.USDT,
-        GlobalValue.tokens.COMMON.OLD_QUICK,
-        GlobalValue.tokens.COMMON.NEW_QUICK,
-        GlobalValue.tokens.COMMON.ETHER,
-        GlobalValue.tokens.COMMON.WBTC,
-      ],
+      [ChainId.MAINNET]: [...WETH_ONLY[ChainId.MAINNET]],
     },
     // used to construct the list of all pairs we consider by default in the frontend
     BASES_TO_TRACK_LIQUIDITY_FOR: {

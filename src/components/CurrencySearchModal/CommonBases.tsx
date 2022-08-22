@@ -35,7 +35,7 @@ const CommonBases: React.FC<CommonBasesProps> = ({
           }}
         >
           <CurrencyLogo currency={ETHER} size='24px' />
-          <small>MATIC</small>
+          <small>wwDOGE</small>
         </Box>
         {(chainId ? GlobalData.bases.SUGGESTED_BASES[chainId] : []).map(
           (token: Token) => {

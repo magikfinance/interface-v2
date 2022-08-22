@@ -45,14 +45,14 @@ export function useInitTransak() {
     const transak = new transakSDK({
       apiKey: process.env.REACT_APP_TRANSAK_KEY, // Your API Key
       environment: 'PRODUCTION', // STAGING/PRODUCTION
-      defaultCryptoCurrency: 'MATIC',
+      defaultCryptoCurrency: 'wwDOGE',
       walletAddress: account, // Your customer's wallet address
       themeColor: '2891f9', // App theme color
       redirectURL: 'window.location.origin',
       hostURL: window.location.origin,
       widgetHeight: mobileWindowSize ? '450px' : '600px',
       widgetWidth: mobileWindowSize ? '360px' : '450px',
-      networks: 'matic',
+      networks: 'doge',
     });
 
     transak.init();

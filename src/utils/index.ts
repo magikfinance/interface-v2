@@ -1907,7 +1907,7 @@ export function getWalletKeys(
 
 export function getTokenAddress(token: Token | undefined) {
   if (!token) return;
-  if (token.symbol?.toLowerCase() === 'wmatic') return 'ETH';
+  if (token.symbol?.toLowerCase() === 'wwdoge') return 'ETH';
   return token.address;
 }
 

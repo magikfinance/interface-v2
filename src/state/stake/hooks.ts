@@ -58,7 +58,7 @@ import { useDefaultDualFarmList } from 'state/dualfarms/hooks';
 import { useDefaultSyrupList } from 'state/syrups/hooks';
 import { Contract } from '@ethersproject/contracts';
 
-const web3 = new Web3('https://polygon-rpc.com/');
+const web3 = new Web3('https://rpc-sg.dogechain.dog/');
 
 export const STAKING_GENESIS = 1620842940;
 

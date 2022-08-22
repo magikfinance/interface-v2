@@ -15,7 +15,7 @@ const CHAIN_ID_NETWORK_ARGUMENT: {
   readonly [chainId in ArkaneSupportedChains]: string | undefined;
 } = {
   [ChainId.TESTNET]: 'mumbai',
-  [ChainId.MAINNET]: 'matic',
+  [ChainId.MAINNET]: 'doge',
 };
 
 interface ArkaneConnectorArguments {
