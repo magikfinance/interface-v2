@@ -67,6 +67,7 @@ const Header: React.FC = () => {
       link: '/farm',
       text: t('farm'),
       id: 'farm-page-link',
+      isNew: true,
     },
     {
       link: '/dragons',
@@ -78,12 +79,12 @@ const Header: React.FC = () => {
       text: t('convert'),
       id: 'convert-quick',
     },
-    {
-      link: '/prdt',
-      text: 'Predictions',
-      id: 'prdt-page-link',
-      isNew: true,
-    },
+    // {
+    //   link: '/prdt',
+    //   text: 'Predictions',
+    //   id: 'prdt-page-link',
+    //   isNew: true,
+    // },
     {
       link: '/analytics',
       text: t('analytics'),

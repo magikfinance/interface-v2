@@ -2,6 +2,7 @@
   "name": "interface-v2",
   "version": "0.1.0",
   "private": true,
+  "proxy":"http://localhost:8000/subgraphs/name/magikfinance/test/",
   "devDependencies": {
     "@arkane-network/web3-arkane-provider": "^0.23.0",
     "@ethersproject/experimental": "^5.4.0",

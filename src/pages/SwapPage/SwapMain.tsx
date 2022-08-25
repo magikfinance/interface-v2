@@ -55,14 +55,14 @@ const SwapMain: React.FC = () => {
           >
             <p>{t('market')}</p>
           </Box>
-          <Box
+          {/* <Box
             className={`${
               swapIndex === SWAP_LIMIT ? 'activeSwap' : ''
             } swapItem headingItem ${isProMode ? 'border-right' : ''}`}
             onClick={() => setSwapIndex(SWAP_LIMIT)}
           >
             <p>{t('limit')}</p>
-          </Box>
+          </Box> */}
         </Box>
         <Box my={1} className='flex items-center'>
           {!isProMode && (
